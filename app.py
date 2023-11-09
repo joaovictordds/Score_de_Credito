@@ -26,7 +26,7 @@ if pagina == 'Modelo - Score de Crédito':
     st.write('Quantidade de parcelas:')
     parcelas = st.number_input('Duration_of_Credit_monthly', 0, 200, 3)
     st.write('Saldo atual do cliente:')
-    saldo = st.number_input('Account_Balance', 0, 100000, 0)
+    saldo = st.number_input('Account_Balance', 0, 100000, 1)
     st.write('Possui outros financiamentos')
     st.write('**0**: Outros bancos, **1:** Em lojas de departamento, **2:** nenhum')
     outros_cred = st. selectbox('No_of_Credits_at_this_Bank', [0,1,2])
