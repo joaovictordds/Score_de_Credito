@@ -13,7 +13,7 @@ if pagina == 'Home':
     
 if pagina == 'Modelo - Score de Crédito':
       
-    subpag = ['Liberar novo crédito','Sugestão de quantia']
+    subpag = ['Liberar novo crédito'] #'Sugestão de quantia'
     pag = st.sidebar.selectbox('Selecione o modelo:', subpag)
     
     if pag == 'Liberar novo crédito':
