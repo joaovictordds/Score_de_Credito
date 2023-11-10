@@ -12,8 +12,7 @@ if pagina == 'Home':
     st.title('Meus modelos em produção :gem:')
     
 if pagina == 'Modelo - Score de Crédito':
-  
-    
+      
     subpag = ['Liberar novo crédito','Sugestão de quantia']
     pag = st.sidebar.selectbox('Selecione o modelo:', subpag)
     
@@ -54,9 +53,9 @@ if pagina == 'Modelo - Score de Crédito':
             
     if pag == 'Sugestão de quantia':  
         
-        modelo1 = joblib.load('modelo_regressao.pkl')     
+        modelo = joblib.load('modelo_regressao.pkl')     
         st.title('Sugestão de valor de liberação de crédito')
-        st.write('Após aprovação de um novo crédito, o modelo sugere o valor aproximado em que o cliente na margem de pagamento.')
+        st.write('O modelo a seguir sugere um valor aproximado para tomar de empréstimo.')
         st.markdown('---')
         
         st.write('**Cliente apto para um novo crédito?**')
@@ -92,7 +91,7 @@ if pagina == 'Modelo - Score de Crédito':
         st.markdown('---')
         
         if st.button('Executar'):
-            qtia = modelo1.predict(input)
+            qtia = modelo.predict(input)
             st.subheader(f'Valor sugerido de $ {qtia.round(2)}')
 
 
